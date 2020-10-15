@@ -1,4 +1,4 @@
-package com.example.joinDataApp.criteria;
+package com.example.joinDataApp.number.criteria;
 
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;

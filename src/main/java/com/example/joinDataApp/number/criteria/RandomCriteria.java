@@ -1,4 +1,4 @@
-package com.example.joinDataApp.criteria;
+package com.example.joinDataApp.number.criteria;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

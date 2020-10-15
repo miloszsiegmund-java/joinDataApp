@@ -1,6 +1,6 @@
-package com.example.joinDataApp.client;
+package com.example.joinDataApp.number.client;
 
-import com.example.joinDataApp.criteria.RandomCriteria;
+import com.example.joinDataApp.number.criteria.RandomCriteria;
 import com.example.joinDataApp.strategy.IFetchDataStrategy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
