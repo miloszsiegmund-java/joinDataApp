@@ -25,9 +25,10 @@ public class ApiNumberClient implements IFetchDataStrategy<Integer> {
     private static final String FORMAT_VALUE = "plain";
     private static final String RND = "rnd";
     private static final String RND_VALUE = "new";
+    private static final Integer MIN_VALUE = -1000;
+    private static final Integer MAX_VALUE = 1000;
 
-    private final ApiCriteria apiCriteria;
-    private final RestTemplate restTemplate;
+    private RestTemplate restTemplate = new RestTemplate();
 
     @Override
     public Integer fetchData() throws HttpStatusCodeException {
@@ -35,8 +36,8 @@ public class ApiNumberClient implements IFetchDataStrategy<Integer> {
         try {
             UriComponentsBuilder urlRestApiRandomInt = UriComponentsBuilder.fromHttpUrl(URL)
                     .queryParam(NUM, NUM_VALUE)
-                    .queryParam(MIN, apiCriteria.getMin())
-                    .queryParam(MAX, apiCriteria.getMax())
+                    .queryParam(MIN, ApiCriteria.getMIN())
+                    .queryParam(MAX, ApiCriteria.getMAX())
                     .queryParam(COL, COL_VALUE)
                     .queryParam(BASE, BASE_VALUE)
                     .queryParam(FORMAT, FORMAT_VALUE)
@@ -46,7 +47,7 @@ public class ApiNumberClient implements IFetchDataStrategy<Integer> {
 
             return Integer.valueOf(valueAsString.trim());
         } catch (HttpStatusCodeException e) {
-            return null;
+            throw new RuntimeException(e);
         }
     }
 }

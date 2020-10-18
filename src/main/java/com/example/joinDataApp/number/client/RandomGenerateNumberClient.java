@@ -11,12 +11,10 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class RandomGenerateNumberClient implements IFetchDataStrategy<Integer> {
 
-    private final RandomCriteria randomCriteria;
-
+    private final Random random = new Random();
 
     @Override
     public Integer fetchData() {
-        Random r = new Random();
-        return r.nextInt(randomCriteria.getMax());
+        return random.nextInt(RandomCriteria.getMAX());
     }
 }

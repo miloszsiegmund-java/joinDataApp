@@ -1,5 +1,8 @@
 package com.example.joinDataApp.strategy;
 
+import com.example.joinDataApp.source.DataSourceType;
+
 public interface IJoinDataStrategy<T> {
-    T joinData(T firstValue, T secondValue);
+    boolean accept(MethodType methodType);
+    T joinData(DataSourceType firstDataSource, DataSourceType secondDataSource);
 }

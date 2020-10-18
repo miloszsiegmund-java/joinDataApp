@@ -25,7 +25,7 @@ public class NumberControllerTest {
     private IJoinDataStrategy<Integer> IJoinDataStrategy;
 
     private static final String EXCEPTION_MESSAGE = "Value must not be null";
-    private static final String API_URL = "/api/number/sum";
+    private static final String API_URL = "/api/number/join/sum/api/random";
 
     @Test
     void contextLoads() {
@@ -36,7 +36,6 @@ public class NumberControllerTest {
         mockMvc.perform(get(API_URL))
                 .andExpect(status().isOk())
                 .andDo(print());
-
     }
 
     @Test
