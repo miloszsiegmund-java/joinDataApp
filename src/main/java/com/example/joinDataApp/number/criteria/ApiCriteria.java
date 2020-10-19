@@ -11,12 +11,12 @@ public class ApiCriteria {
     private static Integer MAX;
 
     @Value("${api.criteria.max}")
-    public void setMax(Integer max) {
+    private void setMax(Integer max) {
         MAX = max;
     }
 
     @Value("${api.criteria.min}")
-    public void setMin(Integer min) {
+    private void setMin(Integer min) {
         MIN = min;
     }
 
